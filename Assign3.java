@@ -17,7 +17,7 @@ public class Assign3 {
         TaskQueue<Integer> taskQueue = new TaskQueue<>();
 
         ArrayList<Integer> tasks = new ArrayList<>();
-        for (int i = 0; i < /*1001*/15; i++) {
+        for (int i = 0; i < /*1001*/35; i++) {
             tasks.add(i + 1);
         }
         Collections.shuffle(tasks);
@@ -29,13 +29,21 @@ public class Assign3 {
 
         int numCores = getRuntime().availableProcessors();
 
+        BPP bpp = new BPP();
+
+        long duration = System.currentTimeMillis();
+
         while (taskQueue.size() > 0) {
             int thisTask = taskQueue.pop();
-            //do the thing
+            int digit = bpp.getNthDigit(thisTask);
+            results.add(thisTask, digit);
         }
 
-        System.out.println(results.toString());
+        //System.out.println(results.toString());
+        System.out.println(results.getAllDigits());
 
+        duration = System.currentTimeMillis() - duration;
+        System.out.println("> " + duration + " ms");
     }
 
     /**

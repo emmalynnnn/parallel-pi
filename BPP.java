@@ -151,9 +151,14 @@ public class BPP {
 
     public int getNthDigit(int n) {
         int result = getDecimal(n);
-        System.out.println(result);
+        //System.out.println(result);
         int digits = (int)(Math.log10(result));
+        //System.out.println(digits);
+        if (digits == 7) {
+            return 0;
+        }
         int singleDigit = (int)(result / (int)(Math.pow(10, digits)));
+        //System.out.println("   " + singleDigit);
         return singleDigit;
     }
 
@@ -164,7 +169,7 @@ public class BPP {
     public static void main(String args[]) {
 
         long duration = System.currentTimeMillis();
-        int NUM = 3;	// nth number of pi to print out
+        int NUM = 32;	// nth number of pi to print out
 
         BPP bpp = new BPP();
         System.out.println("Just the first digit is: " + bpp.getNthDigit(NUM));

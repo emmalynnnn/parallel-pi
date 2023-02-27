@@ -24,4 +24,13 @@ public class ResultTable<E> {
         return hashTable.toString();
     }
 
+    public String getAllDigits() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("3.");
+        for (int i = 0; i < hashTable.keySet().toArray().length; i++) {
+            sb.append(hashTable.get(hashTable.keySet().toArray()[i]));
+        }
+        return sb.toString();
+    }
+
 }
