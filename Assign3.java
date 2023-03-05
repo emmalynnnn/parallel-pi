@@ -47,6 +47,19 @@ public class Assign3 {
 
         int numCompleted = 0;
 
+        /*while (taskQueue.size() > 0) {
+            int thisTask = taskQueue.pop();
+            int digit = bpp.getNthDigit(thisTask);
+            results.add(thisTask, digit);
+            numCompleted++;
+            if (numCompleted % 10 == 0) {
+                System.out.print(".");
+                if (numCompleted % 25 == 0) {
+                    System.out.println("");
+                }
+            }
+        }*/
+
         int threadNum = numCores;
 
         Thread[] threads = new Thread[threadNum];
@@ -66,10 +79,9 @@ public class Assign3 {
             }
         }
 
-        System.out.println("\n");
-
         //System.out.println(results.toString());
         System.out.println(results.getAllDigits());
+        System.out.println("");
 
         duration = System.currentTimeMillis() - duration;
         System.out.println("Pi computation took " + duration + " ms");

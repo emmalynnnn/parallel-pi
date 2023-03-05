@@ -1,8 +1,10 @@
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class TaskQueue<E> {
-    private Queue<E> queue = new LinkedList();
+    private List<E> queue = Collections.synchronizedList(new LinkedList<>());
 
     public TaskQueue() {
         //constructor
@@ -13,7 +15,9 @@ public class TaskQueue<E> {
     }
 
     public E pop() {
-        return queue.poll();
+        E element = queue.get(0);
+        queue.remove(0);
+        return element;
     }
 
     public void clear() {

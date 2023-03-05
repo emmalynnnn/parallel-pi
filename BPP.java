@@ -154,7 +154,7 @@ public class BPP {
         //System.out.println(result);
         int digits = (int)(Math.log10(result));
         //System.out.println(digits);
-        if (digits == 7) {
+        if (digits != 8) {
             return 0;
         }
         int singleDigit = (int)(result / (int)(Math.pow(10, digits)));
@@ -169,7 +169,7 @@ public class BPP {
     public static void main(String args[]) {
 
         long duration = System.currentTimeMillis();
-        int NUM = 32;	// nth number of pi to print out
+        int NUM = Integer.parseInt(args[0]);	// nth number of pi to print out
 
         BPP bpp = new BPP();
         System.out.println("Just the first digit is: " + bpp.getNthDigit(NUM));
