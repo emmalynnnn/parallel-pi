@@ -26,7 +26,7 @@ public class Assign3 {
      */
     public static void main(String args[]) {
         TaskQueue<Integer> taskQueue = new TaskQueue<>();
-        int DIGITS = 1000;
+        int DIGITS = 400;
 
         ArrayList<Integer> tasks = new ArrayList<>();
         for (int i = 0; i < DIGITS; i++) {
@@ -64,7 +64,7 @@ public class Assign3 {
 
         Thread[] threads = new Thread[threadNum];
         for (int i = 0; i < threadNum; i++) {
-            threads[i] = new WorkerThread(taskQueue, results);
+            threads[i] = new WorkerThread(taskQueue, results, numCompleted, DIGITS);
         }
 
         for (int i = 0; i < threadNum; i++) {
@@ -74,8 +74,8 @@ public class Assign3 {
         for (int i = 0; i < threadNum; i++) {
             try {
                 threads[i].join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (InterruptedException error) {
+                error.printStackTrace();
             }
         }
 
