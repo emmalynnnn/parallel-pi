@@ -30,7 +30,7 @@ public class WorkerThread extends Thread {
 
     private synchronized void checkIfUpdate() {
         if ((digits - tasks.size()) % 10 == 0) {
-            System.out.print((digits - tasks.size()) + " ");
+            System.out.print((digits - tasks.size()) + "(" + Thread.currentThread().getId() + ") ");
         }
     }
 

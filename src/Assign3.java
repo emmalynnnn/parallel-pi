@@ -26,7 +26,7 @@ public class Assign3 {
      */
     public static void main(String args[]) {
         TaskQueue<Integer> taskQueue = new TaskQueue<>();
-        int DIGITS = 400;
+        int DIGITS = 200;
 
         ArrayList<Integer> tasks = new ArrayList<>();
         for (int i = 0; i < DIGITS; i++) {
@@ -78,6 +78,8 @@ public class Assign3 {
                 error.printStackTrace();
             }
         }
+
+        System.out.println("");
 
         //System.out.println(results.toString());
         System.out.println(results.getAllDigits());
