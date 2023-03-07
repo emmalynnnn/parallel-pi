@@ -1,3 +1,9 @@
+/**
+ * Emma Lynn
+ * a02391851@usu.edu
+ * Assignment 3
+ */
+
 import static java.lang.Math.log;
 import static java.lang.Math.pow;
 
@@ -165,7 +171,7 @@ public class BPP {
     /*
      * Runs the program
      * @param args
-     *
+     */
     public static void main(String args[]) {
 
         long duration = System.currentTimeMillis();
@@ -177,6 +183,6 @@ public class BPP {
 
         duration = System.currentTimeMillis() - duration;
         System.out.println("> " + duration + " ms");
-    }*/
+    }
 
 }

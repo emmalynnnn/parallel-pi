@@ -1,3 +1,9 @@
+/**
+ * Emma Lynn
+ * a02391851@usu.edu
+ * Assignment 3
+ */
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,9 +21,9 @@ public class TaskQueue<E> {
     }
 
     public E pop() {
-        E element = queue.get(0);
-        queue.remove(0);
-        return element;
+        //E element = queue.get(0);
+        return queue.remove(0);
+        //return element;
     }
 
     public void clear() {

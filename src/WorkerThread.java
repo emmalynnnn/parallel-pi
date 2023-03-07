@@ -1,3 +1,9 @@
+/**
+ * Emma Lynn
+ * a02391851@usu.edu
+ * Assignment 3
+ */
+
 public class WorkerThread extends Thread {
     TaskQueue<Integer> tasks;
     ResultTable<Integer> results;
@@ -17,26 +23,31 @@ public class WorkerThread extends Thread {
             BPP bpp = new BPP();
             while (tasks.size() > 0) {
                 int thisTask = tasks.pop();
-
-                //int digit = bpp.getNthDigit(thisTask);
-
-                results.add(thisTask, calculate(bpp, thisTask));
-                //results.add(thisTask, digit);
+                int tasksRemaining = tasks.size();
+                int digit = bpp.getNthDigit(thisTask);
+                results.add(thisTask, digit);
                 numCompleted++;
-                checkIfUpdate();
+                checkIfUpdate(tasksRemaining);
             }
         }
     }
 
-    private synchronized void checkIfUpdate() {
-        if ((digits - tasks.size()) % 10 == 0) {
-            System.out.print((digits - tasks.size()) + "(" + Thread.currentThread().getId() + ") ");
+    private synchronized void checkIfUpdate(int tasksRemaining) {
+        if ((digits - tasksRemaining) % 10 == 0) {
+            System.out.print(".");
+            System.out.flush();
         }
-    }
 
-    private synchronized int calculate(BPP bpp, int num) {
-        int digit = bpp.getNthDigit(num);
-        return digit;
+        /*if ((digits - tasksRemaining) % 50 == 0) {
+            //System.out.println(".");
+            System.out.println((digits - tasksRemaining) + " ");
+            System.out.flush();
+        } else if ((digits - tasksRemaining) % 10 == 0) {
+            //System.out.print((digits - tasksRemaining) + "(" + Thread.currentThread().getId() + ") ");
+            //System.out.print(".");
+            System.out.print((digits - tasksRemaining) + " ");
+            System.out.flush();
+        }*/
     }
 
 }

@@ -1,8 +1,19 @@
+/**
+ * Emma Lynn
+ * a02391851@usu.edu
+ * Assignment 3
+ */
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
+
+import java.io.*;
+import java.util.*;
 
 public class ResultTable<E> {
-    private Map<E, E> hashTable = new HashMap();
+    private Map<E, E> hashTable = Collections.synchronizedMap(new HashMap());
 
     public ResultTable() {
         //constructor
@@ -27,9 +38,16 @@ public class ResultTable<E> {
     public String getAllDigits() {
         StringBuilder sb = new StringBuilder();
         sb.append("3.");
-        for (int i = 0; i < hashTable.keySet().toArray().length; i++) {
-            sb.append(hashTable.get(hashTable.keySet().toArray()[i]));
+
+        TreeMap<E, E> treeMap = new TreeMap<E, E>(hashTable);
+        Set<E> keys = treeMap.keySet();
+        Iterator<E> itr = keys.iterator();
+
+        while (itr.hasNext()) {
+            E i = itr.next();
+            sb.append(treeMap.get(i));
         }
+
         return sb.toString();
     }
 
