@@ -155,23 +155,26 @@ public class BPP {
                 return i;
     }
 
+    /**
+     * Method to get the nth digit of pi
+     * @param n the digit number
+     * @return the corresponding digit
+     * @author Emma Lynn
+     */
     public int getNthDigit(int n) {
         int result = getDecimal(n);
-        //System.out.println(result);
         int digits = (int)(Math.log10(result));
-        //System.out.println(digits);
         if (digits != 8) {
             return 0;
         }
         int singleDigit = (int)(result / (int)(Math.pow(10, digits)));
-        //System.out.println("   " + singleDigit);
         return singleDigit;
     }
 
     /*
      * Runs the program
      * @param args
-     */
+     *
     public static void main(String args[]) {
 
         long duration = System.currentTimeMillis();
@@ -183,6 +186,6 @@ public class BPP {
 
         duration = System.currentTimeMillis() - duration;
         System.out.println("> " + duration + " ms");
-    }
+    }*/
 
 }

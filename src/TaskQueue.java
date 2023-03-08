@@ -16,24 +16,41 @@ public class TaskQueue<E> {
         //constructor
     }
 
+    /**
+     * Method to add to the queue
+     * @param toAdd the item to add
+     */
     public void push(E toAdd) {
         queue.add(toAdd);
     }
 
+    /**
+     * Method to remove and return the first item in the queue
+     * @return the first item from the queue
+     */
     public E pop() {
-        //E element = queue.get(0);
         return queue.remove(0);
-        //return element;
     }
 
+    /**
+     * Clears queue
+     */
     public void clear() {
         queue.clear();
     }
 
+    /**
+     * Method to get a string representation of the queue
+     * @return a string representation of the queue
+     */
     public String toString() {
         return queue.toString();
     }
 
+    /**
+     * Method to get the size of the queue
+     * @return the size of the queue
+     */
     public int size() {
         return queue.size();
     }

@@ -19,22 +19,43 @@ public class ResultTable<E> {
         //constructor
     }
 
+    /**
+     * Method to add a result to the hash table
+     * @param key the key to add
+     * @param value the value to associate with the key
+     */
     public void add(E key, E value) {
         hashTable.put(key, value);
     }
 
+    /**
+     * Method to get a value from the hash table
+     * @param key the key to get the value of
+     * @return the associated value
+     */
     public E get(E key) {
         return hashTable.get(key);
     }
 
+    /**
+     * Method to clear the hashtable
+     */
     public void clear() {
         hashTable.clear();
     }
 
+    /**
+     * Method to get string representation of the hash table
+     * @return string representation of the hash table
+     */
     public String toString() {
         return hashTable.toString();
     }
 
+    /**
+     * Method to return the digits of pi from the sorted order of keys
+     * @return string of digits of pi
+     */
     public String getAllDigits() {
         StringBuilder sb = new StringBuilder();
         sb.append("3.");
